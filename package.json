@@ -10,8 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dompurify": "^3.0.8",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "jsdom": "^24.0.0",
     "lodash": "^4.17.21"
   }
 }
