@@ -31,12 +31,16 @@ app.get("/compose", (req, res) => {
 });
 
 app.post("/compose", (req, res) => {
-    const Compose = {
-      title: req.body.title,
-      content: req.body.body
-    }
-    posts.push(Compose);
-    res.redirect("/");
+  const Compose = {
+    title: req.body.title,
+    content: req.body.body
+  }
+  
+  // Replace newline characters with <br> tags in the content
+  Compose.content = Compose.content.replace(/\n/g, '<br>');
+  
+  posts.push(Compose);
+  res.redirect("/");
 });
 
 app.get("/posts/:title", (req, res) => {
